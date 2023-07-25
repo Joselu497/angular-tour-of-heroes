@@ -8,7 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfoHeroComponent } from './components/info-hero/info-hero.component';
 import { NewHeroComponent } from './components/new-hero/new-hero.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     InfoHeroComponent,
     NewHeroComponent,
     DashboardComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     FormsModule,
     MatSelectModule,
     MatAutocompleteModule,
+    MatToolbarModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }

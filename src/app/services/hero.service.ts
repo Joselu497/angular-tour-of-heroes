@@ -19,6 +19,7 @@ export class HeroService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
+  //return the Observable of heroes
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
@@ -26,6 +27,7 @@ export class HeroService {
       );
   }
 
+  //add hero to the Observable of heroes
   addHero(hero: Hero): Observable<Hero> {
     this.router.navigate(['/heroes'])
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
@@ -33,6 +35,7 @@ export class HeroService {
     );
   }
 
+  //delete hero to the Observable of heroes
   deleteHero(hero: Hero): Observable<Hero> {
     const url = `${this.heroesUrl}/${hero.id}`;
   
@@ -41,6 +44,7 @@ export class HeroService {
     );
   }
 
+  //search heroes on the Observable of heroes
   searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
@@ -51,13 +55,11 @@ export class HeroService {
     );
   }
 
-
+  //return posible error
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
