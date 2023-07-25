@@ -1,0 +1,28 @@
+<h2>Attributes</h2>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title matInput>{{hero.name}}</mat-card-title>
+    <mat-card-subtitle>Race: {{hero.race}} <br> Class:{{hero.class}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <div class="column">
+        <mat-list-item>Strength</mat-list-item>
+        <mat-list-item>Finesse</mat-list-item>
+        <mat-list-item>Intelligence</mat-list-item>
+        <mat-list-item>Constitution</mat-list-item>
+        <mat-list-item>Memory</mat-list-item>
+        <mat-list-item>Wits</mat-list-item>
+      </div>
+      <div>
+        <mat-list-item>{{hero.attributes.strength}}</mat-list-item>
+        <mat-list-item>{{hero.attributes.finesse}}</mat-list-item>
+        <mat-list-item>{{hero.attributes.intelligence}}</mat-list-item>
+        <mat-list-item>{{hero.attributes.constitution}}</mat-list-item>
+        <mat-list-item>{{hero.attributes.memory}}</mat-list-item>
+        <mat-list-item>{{hero.attributes.wits}}</mat-list-item>
+      </div>
+    </mat-list>
+
+  </mat-card-content>
+</mat-card>

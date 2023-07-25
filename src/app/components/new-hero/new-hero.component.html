@@ -1,0 +1,48 @@
+
+<mat-card>
+    <mat-card-header>
+        <h2>New Hero</h2>
+    </mat-card-header>
+    <mat-card-content>
+        <!-- form to create and add a new hero -->
+        <form #newForm="ngForm" (ngSubmit)="add(newForm)">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput type=string [(ngModel)]="hero.name" name="name" required>
+            </mat-form-field>
+            <div>
+                <mat-form-field class="class">
+                    <mat-label>Class</mat-label>
+                    <mat-select [(ngModel)]="hero.class" name="class" required>
+                        <mat-option value="Battlemage">Battlemage</mat-option>
+                        <mat-option value="Cleric">Cleric</mat-option>
+                        <mat-option value="Conjurer">Conjurer</mat-option>
+                        <mat-option value="Enchanter">Enchanter</mat-option>
+                        <mat-option value="Fighter">Fighter</mat-option>
+                        <mat-option value="Inquisitor">Inquisitor</mat-option>
+                        <mat-option value="Knight">Knight</mat-option>
+                        <mat-option value="Metamorph">Metamorph</mat-option>
+                        <mat-option value="Ranger">Ranger</mat-option>
+                        <mat-option value="Rogue">Rogue</mat-option>
+                        <mat-option value="Shadowblade">Shadowblade</mat-option>
+                        <mat-option value="Wayfarer">Wayfarer</mat-option>
+                        <mat-option value="Witch">Witch</mat-option>
+                        <mat-option value="Wizard">Wizard</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="race">
+                    <mat-label>Race</mat-label>
+                    <mat-select [(ngModel)]="hero.race" name="race" required>
+                        <mat-option value="Human">Human</mat-option>
+                        <mat-option value="Elf">Elf</mat-option>
+                        <mat-option value="Dwarf">Dwarf</mat-option>
+                        <mat-option value="Lizard">Lizard</mat-option>
+                        <mat-option value="Undead">Undead</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button mat-stroked-button type="submit">Create</button>
+            <button mat-stroked-button routerLink="/">Cancel</button>
+        </form>
+    </mat-card-content>   
+</mat-card>

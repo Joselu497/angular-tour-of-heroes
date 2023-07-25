@@ -1,0 +1,18 @@
+mat-card{
+    width: 300px;
+    min-height: 400px;
+}
+mat-list{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+.column{
+    width: 10px;
+    flex: 1;
+    border-radius: 8px;
+}
+
+.column mat-list-item{
+    border-bottom: 2px solid #f0f0f0;
+}

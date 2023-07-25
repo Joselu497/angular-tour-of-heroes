@@ -1,0 +1,18 @@
+mat-card{
+    margin: 0 auto;
+    width: 500px;
+}
+button{
+    float: right;
+    margin-right: 20px;
+}
+
+mat-form-field{
+    margin: 0 10px;
+}
+.class{
+    float: left;
+}
+.race{
+    float: right;
+}
