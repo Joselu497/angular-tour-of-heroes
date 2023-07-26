@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -15,7 +14,6 @@ export class HeroService {
 
   constructor( 
     private http: HttpClient, 
-    private router: Router 
     ) { }
 
   httpOptions = {
@@ -29,10 +27,15 @@ export class HeroService {
         catchError(this.handleError<Hero[]>('getHeroes', []))
       );
   }
+  getHero(id: number): Observable<Hero> {
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
+  }
 
   //add hero to the server
   addHero(hero: Hero): Observable<Hero> {
-    this.router.navigate(['/heroes'])
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
       catchError(this.handleError<Hero>('addHero'))
     );

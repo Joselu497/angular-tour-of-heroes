@@ -24,6 +24,7 @@ import { InfoHeroComponent } from './components/info-hero/info-hero.component';
 import { NewHeroComponent } from './components/new-hero/new-hero.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { EditHeroComponent } from './components/edit-hero/edit-hero.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     NewHeroComponent,
     DashboardComponent,
     NavBarComponent,
+    EditHeroComponent,
   ],
   imports: [
     BrowserModule,

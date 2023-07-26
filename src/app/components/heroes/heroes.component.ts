@@ -10,7 +10,7 @@ import { HeroService } from '../../services/hero.service';
 })
 export class HeroesComponent implements OnInit{
   heroes!: Hero[];
-  selectedHero!: Hero | null;
+  selectedHero!: Hero;
 
   constructor(private heroService: HeroService) { }
 
@@ -18,7 +18,7 @@ export class HeroesComponent implements OnInit{
     this.getHeroes();
   }
 
-  onSelect(hero: Hero | null): void {
+  onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
 
@@ -28,9 +28,6 @@ export class HeroesComponent implements OnInit{
   }
 
   delete(hero: Hero): void {
-    if(this.selectedHero===hero){
-      this.onSelect(null);
-    }
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }

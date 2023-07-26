@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+
 import { Hero } from '../../models/hero.model'
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-info-hero',
@@ -9,7 +9,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./info-hero.component.css']
 })
 
-export class InfoHeroComponent {
+export class InfoHeroComponent{
   @Input() hero!: Hero;
+  
 }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Hero } from '../../models/hero.model'
 import { HeroService } from 'src/app/services/hero.service';
@@ -10,7 +12,11 @@ import { HeroService } from 'src/app/services/hero.service';
 
 export class NewHeroComponent implements OnInit{
 
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private heroService: HeroService,
+    private route: ActivatedRoute,
+    private location: Location,
+    ) { }
 
   heroes!: Hero[];
   hero: Hero = {id:0 ,name: '',class: '', race: '', attributes:{
@@ -31,6 +37,10 @@ export class NewHeroComponent implements OnInit{
     .subscribe(heroes => this.heroes = heroes);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   add(form: any): void {
     if(form.valid) {
       this.hero.id = this.heroes.length > 0 ? Math.max(...this.heroes.map(hero => hero.id)) + 1 : 11;
@@ -41,6 +51,7 @@ export class NewHeroComponent implements OnInit{
       this.heroService.addHero(this.hero)
       .subscribe(hero => {
         this.heroes.push(hero);
+        this.goBack();
       });
     }
   }

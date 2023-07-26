@@ -7,7 +7,16 @@
     background-color: #f0f0f0;
     border-radius: 8px;
     padding-bottom: 5px;
-    border-bottom: 3px solid #f2f2f2;
+    padding-top: 5px;
+}
+.hero-name input{
+    width: 200px;
+    border-style: hidden;
+    padding: 0;
+    margin:0;
+    font-size: 20px;
+    background-color: #f0f0f0;
+    outline: none;
 }
 
 mat-list{
