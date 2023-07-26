@@ -1,6 +1,8 @@
 <mat-toolbar>
     <h2>Tour of Heroes</h2>
     <span class="spacer"></span>
-    <button mat-stroked-button routerLink="/">Dashboard</button>
-    <button mat-stroked-button routerLink="/heroes">Heroes</button>
+    <mat-button-toggle-group class="nav-buttons">
+        <mat-button-toggle mat-stroked-button routerLink="/">Dashboard</mat-button-toggle>
+        <mat-button-toggle mat-stroked-button routerLink="/heroes">Heroes</mat-button-toggle>
+    </mat-button-toggle-group>
 </mat-toolbar>

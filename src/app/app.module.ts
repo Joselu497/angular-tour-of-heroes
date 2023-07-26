@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -45,6 +46,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     MatSelectModule,
     MatAutocompleteModule,
     MatToolbarModule,
+    MatButtonToggleModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }

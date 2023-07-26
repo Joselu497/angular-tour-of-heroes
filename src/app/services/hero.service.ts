@@ -13,7 +13,10 @@ import { Hero } from '../models/hero.model';
 export class HeroService {
   private heroesUrl = 'api/heroes';  // URL to web api
 
-  constructor( private http: HttpClient, private router: Router ) { }
+  constructor( 
+    private http: HttpClient, 
+    private router: Router 
+    ) { }
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,7 +30,7 @@ export class HeroService {
       );
   }
 
-  //add hero to the Observable of heroes
+  //add hero to the server
   addHero(hero: Hero): Observable<Hero> {
     this.router.navigate(['/heroes'])
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
@@ -35,7 +38,7 @@ export class HeroService {
     );
   }
 
-  //delete hero to the Observable of heroes
+  //delete hero in the server
   deleteHero(hero: Hero): Observable<Hero> {
     const url = `${this.heroesUrl}/${hero.id}`;
   
@@ -44,7 +47,14 @@ export class HeroService {
     );
   }
 
-  //search heroes on the Observable of heroes
+  //update hero in the server
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
+  //search heroes on the server
   searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.

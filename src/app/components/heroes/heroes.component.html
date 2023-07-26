@@ -2,13 +2,9 @@
     <div class="heroes">
         <h3>Heroes</h3>
         <!--button for add hero-->
-        <button mat-icon-button class="add-button" routerLink="/new-hero">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>  
-        </button>
+        <button mat-button class="add-button" routerLink="/new-hero"> + </button>
         <!--list of heroes-->
-        <mat-list>
+        <mat-list class="list">
             <mat-card class="hero" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
                 <mat-card-header>
                     <mat-card-title>{{hero.name}}</mat-card-title>

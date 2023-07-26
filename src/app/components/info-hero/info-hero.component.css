@@ -1,18 +1,25 @@
-mat-card{
+.info{
     width: 300px;
     min-height: 400px;
+    padding: 2px;
 }
+.info mat-card-header{
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #f2f2f2;
+}
+
 mat-list{
     display: flex;
     flex-direction: row;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 .column{
     width: 10px;
     flex: 1;
     border-radius: 8px;
 }
-
 .column mat-list-item{
     border-bottom: 2px solid #f0f0f0;
 }
